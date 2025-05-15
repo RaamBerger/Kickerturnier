@@ -13,7 +13,8 @@ def list_players_games():
     und dem Punktstand als zweiten eintrag besitzt.
 
     """
-    print("Name, player. Falls fertig n")
+    print("Name, player."
+          "Falls fertig n und Falls du einen Fehler gemacht hast und neu anfangen willst a")
     
     player = []
     while True:
@@ -21,6 +22,9 @@ def list_players_games():
         
         if name.lower() == "n":
             break
+        
+        if name.lower() == "a":
+            raise ValueError
         
         player.append([name, int(0)])
     

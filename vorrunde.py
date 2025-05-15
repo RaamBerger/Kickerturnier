@@ -6,7 +6,13 @@ Created on Thu May 15 17:26:55 2025
 import tools as t
 
 #generierung Listen, der Teilnehmer*innen und Spiele
-player, games = t.list_players_games()
+while True:
+    try:
+        player, games = t.list_players_games()
+        
+        break
+    except ValueError:
+        print("Die Funktion wird neu gestratet.")
 
 #ausgabe Teilnehmer*innen, aller Spiele
 print("Die Teilnehmer*innen des Turniers sind:")
@@ -17,7 +23,7 @@ print("Dies sind alle Speile:")
 for i in  range(len(player)):
     print(games[i])
 
-#auswahl der Punkte
+#ausgabe der Punkte
 while True:
     antwort = input("Möchtest du die Punkte für jedes Spiel einzelnd angeben? (y/n)")
     if antwort.lower() == "y":
